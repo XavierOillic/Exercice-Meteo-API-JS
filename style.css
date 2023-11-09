@@ -38,8 +38,8 @@ content {
 }
 #meteo_display {
   grid-area: b;
-  height: 89%;
-  width: 95%;
+  height: 100%;
+  width: 100%;
   align-self: center;
   justify-self: center;
   padding: 5%;
@@ -48,4 +48,22 @@ content {
   background-color: #ffffff;
   border-radius: 10px;
   border: 7px solid rgb(168, 127, 23);
+}
+#pays {
+  background-color: aqua;
+}
+#ville {
+  background-color: rgb(51, 101, 101);
+}
+#latitude {
+  background-color: rgb(8, 0, 255);
+}
+#longitude {
+  background-color: rgb(0, 255, 47);
+}
+#temp {
+  background-color: rgb(242, 0, 255);
+}
+#humidite {
+  background-color: rgb(255, 0, 119);
 }
