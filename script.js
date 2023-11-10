@@ -1,17 +1,33 @@
-const urlApi = "https://www.prevision-meteo.ch/services/json/Bagnolet";
 
-fetch(urlApi)                    // Fetch cherche sur le WEB.
-.then((response) => {           //J'attend la reponse à ma requete.
-    return response.json();     // Le return lance la traduction du json recu en Objet lisible.
+
+function ChoisirVille(event) {
+    event.preventDefault();
+
+    const villeRecherchee = document.querySelector("#input_choice").value;
+    console.log(villeRecherchee);
+//Je stocke , et j'affiche la VALEUR SAISIE par le visiteur.
+
+    const urlApi = `https://www.prevision-meteo.ch/services/json/${villeRecherchee}`;
+//je remplace la ville donnée d'office par la constante qui contient la valeur du champ de saisie.
+
+    const vaIciLaVilleChoisie = document.getElementById("city_place");
+//Je stocke l'endroit ou je veux afficher la VilleRecherchée
+    
+    vaIciLaVilleChoisie.innerHTML = `${villeRecherchee}`;
+// la ville saisie doit aller ici...
+    
+fetch(urlApi)                    // La Methode > Fetch cherche sur le WEB.
+.then((response) => {           //J'attend la reponse à ma requete, et ensuite... j'attend.
+    return response.json();     // Le return lance la traduction du json recu en reponse, en Objet lisible.
 })
 .then ((jsonBanana) => {        // le THEN nous permet d'attendre la traduction, et je la stocke dans cette variable BANANA
-    //on fait une requete et on attend grace à la Méthode THEN. On chaine les appels de méthodes.
+//on fait une requete et on attend grace à la Méthode THEN. On chaine les appels de méthodes.
     console.log(jsonBanana);
-    //return jsonBanana;
+// j'affiche le json (traduit) reçu.
 
-        // Je STOCKE les donnnées recues grâce à l'API dans la CONST ci nommée
+// Je STOCKE les donnnées recues grâce à l'API dans la CONST ci nommée
 const pays = jsonBanana.city_info.country;
-//const ville = jsonBanana.city_info.name;
+const ville = jsonBanana.city_info.name;
 const latitude = jsonBanana.city_info.latitude;
 const longitude = jsonBanana.city_info.longitude;
 const temp = jsonBanana.current_condition.tmp;
@@ -30,22 +46,18 @@ iciPays.innerText = `${pays}`;
 //iciVille.innerText = `Nous sommes à : ${ville}`;
 iciLatitude.innerText = `En haut, ici... "${latitude}" de Latitude nord.`;
 iciLongitude.innerText = `Par ici, de ce coté... "${longitude}" de Longitude Est.`;
-iciTemp.innerText = `Chaud ou Froid... ${temp} Celcius`;
+iciTemp.innerText = `Chaud ou Froid... ${temp} d°. Celcius`;
 iciWind.innerText = ` ${vent} km/h`;
 
 });
-
-
-function ChoisirVille(event) {
-event.preventDefault()
-
-//Je stocke la VALEUR SAISIE par le visiteur.
-const villeRecherchee = new Text(document.querySelector("#input_choice").value);
-console.log(villeRecherchee);
-
-
-//Je Stocke dans cette var la Saisie du visiteur.
-//return document.getElementById('#city').innerHTML = `${iciVille}`
 }
 ChoisirVille()
+
+
+
+
+
+
+
+
 

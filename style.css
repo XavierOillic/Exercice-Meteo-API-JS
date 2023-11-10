@@ -30,18 +30,20 @@ p {
   font-size: 70%;
 }
 content {
+  height: auto;
+  width: 100%;
   opacity: 0.8;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1%;
+  grid-gap: 5%;
   grid-template-areas:
     "e a a a ."
     ". c c c ."
     ". b b b ."
     ". b b b ."
-    ". . . . .";
+    ". . . . ."
+    ". d d d .";
   align-items: center;
-  height: auto;
 }
 #logo {
   grid-area: e;
@@ -167,8 +169,14 @@ input {
   height: 4rem;
   width: 8rem;
 }
-footer {
+#jours_suivants {
+  display: grid;
+  grid-area: d;
+  position: inherit;
   background-color: rgb(2, 20, 20);
+  height: 3rem;
+  margin-bottom: 4%;
+  align-content: center;
 }
 
 @media screen and (min-width: 550px) {
