@@ -17,12 +17,24 @@
       </div>
       <header><h1>APPLICATION METEO...encore !</h1></header>
 
-      <div id="meteo_display">
-        <div id="user_input">
-          <form></form>
-          ...votre lieu
-        </div>
+      <div id="user_input">
+        <form id="choix_ville" onsubmit="ChoisirVille(event)">
+          <div>
+            <h3>Choisisssez votre ville :</h3>
+          <label id="Choisissez votre ville...">
+            <input id="input_choice"
+              type="text"
+              aria-placeholder="ici 😄 !"
+              name="Ville"
+              size="20"
+            ></input>
+          </label>
+          <input id="valide_Ville" type="submit" onclick="" value="Enter"></input>
+          </div>
+        </form>
+      </div>
 
+      <div id="meteo_display">
         <div id="country" class="titre_h3"><h3>Pays</h3></div>
 
         <div id="country_place"></div>
