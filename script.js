@@ -33,6 +33,16 @@ const longitude = jsonBanana.city_info.longitude;
 const temp = jsonBanana.current_condition.tmp;
 const vent = jsonBanana.current_condition.wnd_spd;
 
+const dateJ1 = jsonBanana.fcst_day_1.day_short;
+const conditionJ1 = jsonBanana.fcst_day_1.condition;
+
+const icones = jsonBanana.fsct_day_1.icon;
+
+//const icones = `https://prevision-meteo.ch/style/images/icon`;
+
+// https://prevision-meteo.ch/style/images/icon/eclaircies.png
+
+
 // Je STOCKE dans la variable ci nommée le lieu ou je veux afficher les données.
 const iciPays = document.getElementById("country_place");
 //const iciVille = document.getElementById("city_place");
@@ -41,6 +51,9 @@ const iciLongitude = document.getElementById("longitude_place");
 const iciTemp = document.getElementById("temp_place");
 const iciWind = document.getElementById("wind_place");
 
+const iciDateJ1 = document.getElementById("date_place_j1");
+const iciConditionJ1 = document.getElementById("condition_place_j1");
+
 // Je dis que les données de l'API vont aller dans ICI... grace à innertext.
 iciPays.innerText = `${pays}`;
 //iciVille.innerText = `Nous sommes à : ${ville}`;
@@ -48,6 +61,9 @@ iciLatitude.innerText = `En haut, ici... "${latitude}" de Latitude nord.`;
 iciLongitude.innerText = `Par ici, de ce coté... "${longitude}" de Longitude Est.`;
 iciTemp.innerText = `Chaud ou Froid... ${temp} d°. Celcius`;
 iciWind.innerText = ` ${vent} km/h`;
+
+iciDateJ1.innerHTML = `${dateJ1}`;
+iciConditionJ1.innerHTML = `${conditionJ1}`;
 
 });
 }

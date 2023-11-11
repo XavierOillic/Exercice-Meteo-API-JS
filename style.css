@@ -24,12 +24,10 @@ h1 {
 }
 h3 {
   font-size: 70%;
+  color: rgb(27, 28, 28);
 }
 p {
   font-size: 50%;
-}
-h5 {
-  color: aliceblue;
 }
 content {
   height: auto;
@@ -37,7 +35,6 @@ content {
   opacity: 0.8;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(1, 1fr);
   grid-gap: 1%;
   grid-template-areas:
     "e a a a ."
@@ -45,14 +42,10 @@ content {
     ". c c c ."
     ". b b b ."
     ". b b b ."
-    ". b b b ."
-    ". b b b ."
-    ". b b b ."
-    ". b b b ."
-    ". b b b ."
-    ". . . . ."
-    ". d d d .";
-  align-items: center;
+    ". d d d ."
+    ". d d d ."
+    ". . . . .";
+  /*align-items: center;*/
 }
 #logo {
   grid-area: e;
@@ -87,7 +80,8 @@ input {
 }
 .hauteur {
   height: 2.5rem;
-}
+} /* hauteur des cellules INPUT*/
+
 #input_valid {
   display: flex;
   float: right;
@@ -106,70 +100,66 @@ input {
   background-color: #2b2b2b;
   border-radius: 10px;
   border: 7px solid rgb(4, 4, 4);
-  margin-bottom: 5rem;
-}
+} /* Contenu METEO central MOBILE FIRST */
+
 .titre_h3 {
   background-color: rgb(188, 172, 172);
-  color: rgb(27, 28, 28);
   height: 2rem;
-  width: 8rem;
+  width: 10rem;
   text-align: center;
-  /*margin: auto;*/
+  margin: auto;
 }
 .place_api_data {
   text-align: center;
   background-color: rgb(236, 235, 235);
-  color: rgb(38, 38, 38);
+  color: rgb(22, 1, 1);
   height: 4rem;
-  width: 9rem;
+  width: 10rem;
+  margin: auto;
 }
 
-footer {
-  margin-top: 20%;
+#suivants_display {
   display: grid;
   grid-area: d;
+  justify-content: center;
+  margin-top: 4rem;
   background-color: #2b2b2b;
   border-radius: 10px;
   border: 7px solid rgb(4, 4, 4);
-  width: 104%;
-  height: 6rem;
-  margin-bottom: 10%;
-  align-content: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5rem;
 }
+.cote_cote {
+  display: flex;
+}
+#date_place_j1,
+#date_place_j2,
+#date_place_j3,
+#date_place_j4 {
+  width: 40%;
+  background-color: #299910;
+}
+#condition_place_j1,
+#condition_place_j2,
+#condition_place_j3,
+#condition_place_j4 {
+  width: 60%;
+  background-color: #ba0e0e;
+}
+
+/* EN MODE DESKTOP...a partir de 550px, on prend ces caracteristiques, 
+en plus ce celles au dessus*/
 
 @media screen and (min-width: 550px) {
   h1 {
-    font-size: 160%;
-  }
-  h3 {
     font-size: 100%;
   }
-  p {
-    font-size: 80%;
-  }
-}
-
-@media screen and (min-width: 550px) {
   #input_choice {
     font-size: 170%;
   }
-}
-@media screen and (min-width: 550px) {
-  content {
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 3%;
-    grid-template-areas:
-      "e a a a ."
-      ". c c c ."
-      ". b b b ."
-      ". b b b ."
-      ". d d d .";
-    margin-top: 1rem;
-  }
-}
-@media screen and (min-width: 550px) {
   #display_meteo {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: inline-block;
+    text-align: center;
   }
 }
