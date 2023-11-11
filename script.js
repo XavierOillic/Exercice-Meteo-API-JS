@@ -34,11 +34,8 @@ const temp = jsonBanana.current_condition.tmp;
 const vent = jsonBanana.current_condition.wnd_spd;
 
 const dateJ1 = jsonBanana.fcst_day_1.day_short;
-const conditionJ1 = jsonBanana.fcst_day_1.condition;
-
-const icones = jsonBanana.fsct_day_1.icon;
-
-//const icones = `https://prevision-meteo.ch/style/images/icon`;
+const conditionJ1 = jsonBanana.fcst_day_1.icon;
+console.log(conditionJ1); // Je recupere et stocke l'url de l'image.
 
 // https://prevision-meteo.ch/style/images/icon/eclaircies.png
 
@@ -53,6 +50,8 @@ const iciWind = document.getElementById("wind_place");
 
 const iciDateJ1 = document.getElementById("date_place_j1");
 const iciConditionJ1 = document.getElementById("condition_place_j1");
+const iciDateJ2 = document.getElementById("date_place_j2");
+const iciConditionJ2 = document.getElementById("condition_place_j2");
 
 // Je dis que les données de l'API vont aller dans ICI... grace à innertext.
 iciPays.innerText = `${pays}`;
@@ -63,7 +62,11 @@ iciTemp.innerText = `Chaud ou Froid... ${temp} d°. Celcius`;
 iciWind.innerText = ` ${vent} km/h`;
 
 iciDateJ1.innerHTML = `${dateJ1}`;
-iciConditionJ1.innerHTML = `${conditionJ1}`;
+
+const icon_temp = `<img src="${conditionJ1}"/>`;
+console.log(icon_temp);
+
+iciConditionJ1.innerHTML = icon_temp;
 
 });
 }
