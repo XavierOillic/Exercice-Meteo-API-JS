@@ -19,52 +19,53 @@
 
       <div id="user_input">
         <form id="choix_ville" onsubmit="ChoisirVille(event)">
+<!-- Le form contient le ONSUBMIT Imperatif avec la FONCTION et ARGUMENTS du JS-->
           <div>
-            <h3>Choisisssez votre ville :</h3>
-          <label id="Choisissez votre ville...">
-            <input id="input_choice"
-              type="text"
-              aria-placeholder="ici 😄 !"
-              name="Ville"
-              size="20"
-            ></input>
-          </label>
-          <input id="valide_Ville" type="submit" onclick="" value="Enter"></input>
+                <input class="hauteur" id="input_choice"
+                type="text"
+                placeholder="...cette ville ? Sûr ?!"
+                name="Ville"
+                size="25"
+                ></input>
+            <input id="input_valid" type="submit" onclick="" value="Enter"></input>
           </div>
         </form>
       </div>
 
       <div id="meteo_display">
+        
         <div id="country" class="titre_h3"><h3>Pays</h3></div>
 
-        <div id="country_place"></div>
+        <div id="country_place" class ="place_api_data"></div>
 
         <div id="city" class="titre_h3"><h3>Ville</h3></div>
 
-        <div id="city_place"></div>
+        <div id="city_place" class ="place_api_data"></div>
 
         <div id="latitude" class="titre_h3"><h3>Latitude</h3></div>
 
-        <div id="latitude_place"></div>
+        <div id="latitude_place" class ="place_api_data"></div>
 
         <div id="longitude" class="titre_h3"><h3>Longitude</h3></div>
 
-        <div id="longitude_place"></div>
+        <div id="longitude_place" class ="place_api_data"></div>
 
         <div id="temp" class="titre_h3"><h3>Temperature</h3></div>
 
-        <div id="temp_place"></div>
+        <div id="temp_place" class ="place_api_data"></div>
 
         <div id="wind" class="titre_h3"><h3>Venteux</h3></div>
 
-        <div id="wind_place"></div>
+        <div id="wind_place" class ="place_api_data"></div>
 
+    
       </div>
-
-      <div id="jours_suivants"
-      ><h3>...quelques jours de plus 😁</h3>
+  <footer>
+       <div id="jours_suivants"
+      ><h5>...quelques jours de plus 😁</h5>
       <div id="jours_après"></div>
       </div>
+  </footer>
 
     </content>
   </body>

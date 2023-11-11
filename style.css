@@ -3,21 +3,20 @@ body {
   background-size: 100%;
   margin: auto;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 header {
   margin-top: 4%;
   grid-area: a;
   opacity: 0.8;
-  color: rgb(168, 127, 23);
+  color: rgb(252, 251, 251);
   margin-bottom: 5%;
   padding: 2%;
-  box-shadow: 5px 5px 5px rgb(103, 103, 105),
-    -0.5em -0.5em 2em rgb(102, 112, 112);
   background-color: #ffffff;
   text-align: center;
+  background-color: #2b2b2b;
   border-radius: 10px;
-  border: 2px solid rgb(168, 127, 23);
+  border: 7px solid rgb(4, 4, 4);
   font-family: verdana;
 }
 h1 {
@@ -27,7 +26,10 @@ h3 {
   font-size: 70%;
 }
 p {
-  font-size: 70%;
+  font-size: 50%;
+}
+h5 {
+  color: aliceblue;
 }
 content {
   height: auto;
@@ -35,10 +37,17 @@ content {
   opacity: 0.8;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 5%;
+  grid-template-rows: repeat(1, 1fr);
+  grid-gap: 1%;
   grid-template-areas:
     "e a a a ."
     ". c c c ."
+    ". c c c ."
+    ". b b b ."
+    ". b b b ."
+    ". b b b ."
+    ". b b b ."
+    ". b b b ."
     ". b b b ."
     ". b b b ."
     ". . . . ."
@@ -51,131 +60,80 @@ content {
   margin-left: 5%;
   margin-top: 5%;
 }
-#meteo_display {
-  display: inline-block;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  padding: auto;
-  grid-area: b;
-  height: 170%;
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 10px;
-  border: 7px solid rgb(168, 127, 23);
-}
-.titre_h3 {
-  background-color: rgb(188, 172, 172);
-  color: azure;
-  height: 2rem;
-  width: 8rem;
-  text-align: center;
-}
 #user_input {
-  display: inline-block;
   display: grid;
   grid-area: c;
-  background-color: rgb(2, 20, 20);
-  height: 3rem;
+  width: 54%;
+  height: 4rem;
   margin-bottom: 4%;
   align-content: center;
 }
 form {
+  display: grid;
 }
 label {
+  color: #ffffff;
   background-color: rgb(11, 182, 182);
 }
 input {
   color: aliceblue;
-  background-color: rgb(68, 8, 25);
+  text-align: center;
 }
-#country {
-  align-items: center;
-  background-color: aqua;
-  height: 3rem;
+#input_choice {
+  display: flex;
+  background-color: #2b2b2b;
+  font-size: 100%;
+  border: 1px solid #ffffff;
+}
+.hauteur {
+  height: 2.5rem;
+}
+#input_valid {
+  display: flex;
+  float: right;
+  background-color: #2b2b2b;
+  font-size: 14px;
+  margin-top: 1%;
+  margin-right: 2%;
+}
+#meteo_display {
+  display: grid;
+  grid-area: b;
+  justify-content: center;
+  margin: auto;
+  height: 105%;
   width: 100%;
+  background-color: #2b2b2b;
+  border-radius: 10px;
+  border: 7px solid rgb(4, 4, 4);
+  margin-bottom: 5rem;
 }
-#city {
-  align-items: center;
-  background-color: rgb(51, 101, 101);
-  height: 3rem;
-  max-width: 100%;
+.titre_h3 {
+  background-color: rgb(188, 172, 172);
+  color: rgb(27, 28, 28);
+  height: 2rem;
+  width: 8rem;
+  text-align: center;
+  /*margin: auto;*/
 }
-#latitude {
-  align-items: center;
-  background-color: rgb(8, 0, 255);
-  height: 3rem;
-  max-width: 100%;
-}
-#longitude {
-  align-items: center;
-  background-color: rgb(0, 255, 47);
-  height: 3rem;
-  max-width: 100%;
-}
-#temp {
-  align-items: center;
-  background-color: rgb(242, 0, 255);
-  height: 3rem;
-  max-width: 100%;
-}
-#wind {
-  align-items: center;
-  background-color: rgb(255, 0, 119);
-  height: 3rem;
-  max-width: 100%;
+.place_api_data {
+  text-align: center;
+  background-color: rgb(236, 235, 235);
+  color: rgb(38, 38, 38);
+  height: 4rem;
+  width: 9rem;
 }
 
-#country_place {
-  text-align: center;
-  background-color: rgb(32, 32, 32);
-  color: azure;
-  height: 4rem;
-  width: 8rem;
-}
-#city_place {
-  text-align: center;
-  background-color: rgb(32, 32, 32);
-  color: azure;
-  height: 4rem;
-  width: 8rem;
-}
-#latitude_place {
-  text-align: center;
-  background-color: rgb(32, 32, 32);
-  color: azure;
-  height: 4rem;
-  width: 8rem;
-}
-#longitude_place {
-  text-align: center;
-  background-color: rgb(32, 32, 32);
-  color: azure;
-  height: 4rem;
-  width: 8rem;
-}
-#temp_place {
-  text-align: center;
-  background-color: rgb(32, 32, 32);
-  color: azure;
-  height: 4rem;
-  width: 8rem;
-}
-#wind_place {
-  text-align: center;
-  background-color: rgb(32, 32, 32);
-  color: azure;
-  height: 4rem;
-  width: 8rem;
-}
-#jours_suivants {
+footer {
+  margin-top: 20%;
   display: grid;
   grid-area: d;
-  position: inherit;
-  background-color: rgb(2, 20, 20);
-  height: 3rem;
-  margin-bottom: 4%;
+  background-color: #2b2b2b;
+  border-radius: 10px;
+  border: 7px solid rgb(4, 4, 4);
+  width: 104%;
+  height: 6rem;
+  margin-bottom: 10%;
   align-content: center;
 }
 
@@ -187,13 +145,31 @@ input {
     font-size: 100%;
   }
   p {
-    font-size: 110%;
+    font-size: 80%;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  #input_choice {
+    font-size: 170%;
   }
 }
 @media screen and (min-width: 550px) {
-  #meteo_display {
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10%;
-    width: 100%;
+  content {
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 3%;
+    grid-template-areas:
+      "e a a a ."
+      ". c c c ."
+      ". b b b ."
+      ". b b b ."
+      ". d d d .";
+    margin-top: 1rem;
+  }
+}
+@media screen and (min-width: 550px) {
+  #display_meteo {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
   }
 }

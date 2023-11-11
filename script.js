@@ -1,7 +1,7 @@
 
 
-function ChoisirVille(event) {
-    event.preventDefault();
+function ChoisirVille(event) { // L'Arg. Event est celui que nous avons dans le HTML.
+    event.preventDefault(); // Je prevoit les actions par defaut du Form.
 
     const villeRecherchee = document.querySelector("#input_choice").value;
     console.log(villeRecherchee);
