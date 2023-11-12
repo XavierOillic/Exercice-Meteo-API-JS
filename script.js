@@ -34,8 +34,20 @@ const temp = jsonBanana.current_condition.tmp;
 const vent = jsonBanana.current_condition.wnd_spd;
 
 const dateJ1 = jsonBanana.fcst_day_1.day_short;
-const conditionJ1 = jsonBanana.fcst_day_1.icon;
-console.log(conditionJ1); // Je recupere et stocke l'url de l'image.
+const iconeJ1 = jsonBanana.fcst_day_1.icon;
+// recupere, stocke URL de l'image dps les datas envoeés et traduite en json
+
+const dateJ2 = jsonBanana.fcst_day_2.day_short;
+const iconeJ2 = jsonBanana.fcst_day_2.icon;
+// recupere, stocke URL de l'image dps les datas envoeés et traduite en json
+
+const dateJ3 = jsonBanana.fcst_day_3.day_short;
+const iconeJ3 = jsonBanana.fcst_day_3.icon;
+// recupere, stocke URL de l'image dps les datas envoeés et traduite en json
+
+const dateJ4 = jsonBanana.fcst_day_4.day_short;
+const iconeJ4 = jsonBanana.fcst_day_4.icon;
+// recupere, stocke URL de l'image dps les datas envoeés et traduite en json
 
 // https://prevision-meteo.ch/style/images/icon/eclaircies.png
 
@@ -48,10 +60,18 @@ const iciLongitude = document.getElementById("longitude_place");
 const iciTemp = document.getElementById("temp_place");
 const iciWind = document.getElementById("wind_place");
 
+//Je stocke les datas des JOURS a venir (Jour et Icon) dans ICIDATEJ... 
 const iciDateJ1 = document.getElementById("date_place_j1");
-const iciConditionJ1 = document.getElementById("condition_place_j1");
+const iciIconeJ1 = document.getElementById("icone_place_j1");
+
 const iciDateJ2 = document.getElementById("date_place_j2");
-const iciConditionJ2 = document.getElementById("condition_place_j2");
+const iciIconeJ2 = document.getElementById("icone_place_j2");
+
+const iciDateJ3 = document.getElementById("date_place_j3");
+const iciIconeJ3 = document.getElementById("icone_place_j3");
+
+const iciDateJ4 = document.getElementById("date_place_j4");
+const iciIconeJ4 = document.getElementById("icone_place_j4");
 
 // Je dis que les données de l'API vont aller dans ICI... grace à innertext.
 iciPays.innerText = `${pays}`;
@@ -61,12 +81,25 @@ iciLongitude.innerText = `Par ici, de ce coté... "${longitude}" de Longitude Es
 iciTemp.innerText = `Chaud ou Froid... ${temp} d°. Celcius`;
 iciWind.innerText = ` ${vent} km/h`;
 
+// Grace à INNERHTML, je dis que les datas vont aller dans ICIDATE...
 iciDateJ1.innerHTML = `${dateJ1}`;
+iciDateJ2.innerHTML = `${dateJ2}`;
+iciDateJ3.innerHTML = `${dateJ3}`;
+iciDateJ4.innerHTML = `${dateJ4}`;
 
-const icon_temp = `<img src="${conditionJ1}"/>`;
-console.log(icon_temp);
+// Je crée une CONST pour y mettre l'adresse stockée de l'image CONCATENEE avec IMG SRC et les BACKTICKS.
+const icon_temp_J1 = `<img src="${iconeJ1}"/>`;
+// Cette nvl CONST ici de CONCATENATION IRA dans ICIICONEJ... grace à INNERHTML
+iciIconeJ1.innerHTML = icon_temp_J1;
 
-iciConditionJ1.innerHTML = icon_temp;
+const icon_temp_J2 = `<img src="${iconeJ2}"/>`;
+iciIconeJ2.innerHTML = icon_temp_J2;
+
+const icon_temp_J3 = `<img src="${iconeJ3}"/>`;
+iciIconeJ3.innerHTML = icon_temp_J3;
+
+const icon_temp_J4 = `<img src="${iconeJ4}"/>`;
+iciIconeJ4.innerHTML = icon_temp_J4;
 
 });
 }

@@ -49,9 +49,8 @@ content {
 }
 #logo {
   grid-area: e;
-  margin-bottom: 15%;
-  margin-left: 5%;
-  margin-top: 5%;
+  margin-left: 15%;
+  margin-top: 15%;
 }
 #user_input {
   display: grid;
@@ -111,6 +110,7 @@ input {
 }
 .place_api_data {
   text-align: center;
+  align-items: center;
   background-color: rgb(236, 235, 235);
   color: rgb(22, 1, 1);
   height: 4rem;
@@ -140,10 +140,10 @@ input {
   width: 40%;
   background-color: #299910;
 }
-#condition_place_j1,
-#condition_place_j2,
-#condition_place_j3,
-#condition_place_j4 {
+#icone_place_j1,
+#icone_place_j2,
+#icone_place_j3,
+#icone_place_j4 {
   width: 60%;
   background-color: #ba0e0e;
 }
